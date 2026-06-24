@@ -1,38 +1,39 @@
 substitutions:
   # Phases of the Voice Assistant
   # The voice assistant is ready to be triggered by a wake word
-  voice_assist_idle_phase_id: '1'
+  voice_assist_idle_phase_id: "1"
   # The voice assistant is waiting for a voice command (after being triggered by the wake word)
-  voice_assist_waiting_for_command_phase_id: '2'
+  voice_assist_waiting_for_command_phase_id: "2"
   # The voice assistant is listening for a voice command
-  voice_assist_listening_for_command_phase_id: '3'
+  voice_assist_listening_for_command_phase_id: "3"
   # The voice assistant is currently processing the command
-  voice_assist_thinking_phase_id: '4'
+  voice_assist_thinking_phase_id: "4"
   # The voice assistant is replying to the command
-  voice_assist_replying_phase_id: '5'
+  voice_assist_replying_phase_id: "5"
   # The voice assistant is not ready
-  voice_assist_not_ready_phase_id: '10'
+  voice_assist_not_ready_phase_id: "10"
   # The voice assistant encountered an error
-  voice_assist_error_phase_id: '11'
+  voice_assist_error_phase_id: "11"
   # Change this to true in case you ahve a hidden SSID at home.
-  hidden_ssid: "false"
+  hidden_ssid: "true"
   # Substitutions for audio files
-  jack_connected_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/jack_connected.flac
-  jack_disconnected_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/jack_disconnected.flac
-  mute_switch_on_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/mute_switch_on.flac
-  mute_switch_off_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/mute_switch_off.flac
-  timer_finished_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/timer_finished.flac
-  wake_word_triggered_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/wake_word_triggered.flac
-  center_button_press_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/center_button_press.flac
-  center_button_double_press_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/center_button_double_press.flac
-  center_button_triple_press_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/center_button_triple_press.flac
-  center_button_long_press_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/center_button_long_press.flac
-  factory_reset_initiated_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/factory_reset_initiated.mp3
-  factory_reset_cancelled_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/factory_reset_cancelled.mp3
-  factory_reset_confirmed_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/factory_reset_confirmed.mp3
-  easter_egg_tick_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/easter_egg_tick.mp3
-  easter_egg_tada_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/easter_egg_tada.mp3
-  error_cloud_expired_sound_file: https://github.com/esphome/home-assistant-voice-pe/raw/dev/sounds/error_cloud_expired.mp3
+  jack_connected_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/jack_connected.flac
+  jack_disconnected_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/jack_disconnected.flac
+  mute_switch_on_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/mute_switch_on.flac
+  mute_switch_off_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/mute_switch_off.flac
+  timer_finished_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/timer_finished.flac
+  wake_word_triggered_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/wake_word_triggered.flac
+  center_button_press_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/center_button_press.flac
+  center_button_double_press_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/center_button_double_press.flac
+  center_button_triple_press_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/center_button_triple_press.flac
+  center_button_long_press_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/center_button_long_press.flac
+  factory_reset_initiated_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/factory_reset_initiated.mp3
+  factory_reset_cancelled_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/factory_reset_cancelled.mp3
+  factory_reset_confirmed_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/factory_reset_confirmed.mp3
+  easter_egg_tick_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/easter_egg_tick.mp3
+  easter_egg_tada_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/easter_egg_tada.mp3
+  error_cloud_expired_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/error_cloud_expired.mp3
+  thinking_sound_file: https://github.com/retzudo/home-assistant-voice-pe/raw/dev/sounds/thinking.flac
 
 esphome:
   name: home-assistant-voice
@@ -78,7 +79,7 @@ esp32:
       CONFIG_BT_BLE_DYNAMIC_ENV_MEMORY: "y"
 
       CONFIG_MBEDTLS_EXTERNAL_MEM_ALLOC: "y"
-      CONFIG_MBEDTLS_SSL_PROTO_TLS1_3: "y"  # TLS1.3 support isn't enabled by default in IDF 5.1.5
+      CONFIG_MBEDTLS_SSL_PROTO_TLS1_3: "y" # TLS1.3 support isn't enabled by default in IDF 5.1.5
 
 wifi:
   id: wifi_id
@@ -103,7 +104,7 @@ network:
 logger:
   level: DEBUG
   logs:
-    sensor: WARN  # avoids logging debug sensor updates
+    sensor: WARN # avoids logging debug sensor updates
 
 api:
   id: api_id
@@ -111,7 +112,7 @@ api:
     - script.execute: control_leds
   on_client_disconnected:
     - script.execute: control_leds
-  encryption:   # Uses key set by Home Assistant
+  encryption: # Uses key set by Home Assistant
 
 ota:
   - platform: esphome
@@ -126,24 +127,24 @@ i2c:
 psram:
   mode: octal
   speed: 80MHz
-  ignore_not_found: false  # The VPE has PSRAM, so this is safe. Allows configuring WiFi driver to use more resources (done automatically by the speaker media player)
+  ignore_not_found: false # The VPE has PSRAM, so this is safe. Allows configuring WiFi driver to use more resources (done automatically by the speaker media player)
 
 globals:
   # Global index for our LEDs. So that switching between different animation does not lead to unwanted effects.
   - id: global_led_animation_index
     type: int
     restore_value: no
-    initial_value: '0'
+    initial_value: "0"
   # Global initialization variable. Initialized to true and set to false once everything is connected. Only used to have a smooth "plugging" experience
   - id: init_in_progress
     type: bool
     restore_value: no
-    initial_value: 'true'
+    initial_value: "true"
   # Global variable storing the state of ImprovBLE. Used to draw different LED animations
   - id: improv_ble_in_progress
     type: bool
     restore_value: no
-    initial_value: 'false'
+    initial_value: "false"
   # Global variable tracking the phase of the voice assistant (defined above). Initialized to not_ready
   - id: voice_assistant_phase
     type: int
@@ -153,27 +154,27 @@ globals:
   - id: dial_touched
     type: bool
     restore_value: no
-    initial_value: 'false'
+    initial_value: "false"
   # Global variable tracking if the LED color was recently changed.
   - id: color_changed
     type: bool
     restore_value: no
-    initial_value: 'false'
+    initial_value: "false"
   # Global variable tracking if the group media player volume was recent changed.
   - id: group_volume_changed
     type: bool
     restore_value: no
-    initial_value: 'false'
+    initial_value: "false"
   # Global variable tracking if the jack has been plugged touched.
   - id: jack_plugged_recently
     type: bool
     restore_value: no
-    initial_value: 'false'
+    initial_value: "false"
   # Global variable tracking if the jack has been unplugged touched.
   - id: jack_unplugged_recently
     type: bool
     restore_value: no
-    initial_value: 'false'
+    initial_value: "false"
   # Global variable storing the first active timer
   - id: first_active_timer
     type: voice_assistant::Timer
@@ -186,7 +187,7 @@ globals:
   - id: factory_reset_requested
     type: bool
     restore_value: no
-    initial_value: 'false'
+    initial_value: "false"
 
 switch:
   # This is the master mute switch. It is exposed to Home Assistant. The user can only turn it on and off if the hardware switch is off. (The hardware switch overrides the software one)
@@ -899,48 +900,48 @@ light:
           name: "Jack Plugged"
           update_interval: 40ms
           lambda: |-
-              static uint8_t index = 0;
-              if (initial_run) {
-                index = 0;
-              }
-              auto light_color = id(led_ring).current_values;
-              Color color(light_color.get_red() * 255, light_color.get_green() * 255,
-                    light_color.get_blue() * 255);
-              if (index <= 6) {
-                for (uint8_t i = 0; i < 12; i++) {
-                  if (i == index) {
-                    it[i] = color;
-                  } else if (i == (12 - index) % 12) {
-                    it[i] = color;
-                  } else {
-                    it[i] = Color::BLACK;
-                  }
+            static uint8_t index = 0;
+            if (initial_run) {
+              index = 0;
+            }
+            auto light_color = id(led_ring).current_values;
+            Color color(light_color.get_red() * 255, light_color.get_green() * 255,
+                  light_color.get_blue() * 255);
+            if (index <= 6) {
+              for (uint8_t i = 0; i < 12; i++) {
+                if (i == index) {
+                  it[i] = color;
+                } else if (i == (12 - index) % 12) {
+                  it[i] = color;
+                } else {
+                  it[i] = Color::BLACK;
                 }
               }
-              index = (index + 1);
+            }
+            index = (index + 1);
       - addressable_lambda:
           name: "Jack Unplugged"
           update_interval: 40ms
           lambda: |-
-              static uint8_t index = 0;
-              if (initial_run) {
-                index = 0;
-              }
-              auto light_color = id(led_ring).current_values;
-              Color color(light_color.get_red() * 255, light_color.get_green() * 255,
-                    light_color.get_blue() * 255);
-              if (index <= 6) {
-                for (uint8_t i = 0; i < 12; i++) {
-                  if (i == 6 - index) {
-                    it[i] = color;
-                  } else if (i == (6 + index) % 12) {
-                    it[i] = color;
-                  } else {
-                    it[i] = Color::BLACK;
-                  }
+            static uint8_t index = 0;
+            if (initial_run) {
+              index = 0;
+            }
+            auto light_color = id(led_ring).current_values;
+            Color color(light_color.get_red() * 255, light_color.get_green() * 255,
+                  light_color.get_blue() * 255);
+            if (index <= 6) {
+              for (uint8_t i = 0; i < 12; i++) {
+                if (i == 6 - index) {
+                  it[i] = color;
+                } else if (i == (6 + index) % 12) {
+                  it[i] = color;
+                } else {
+                  it[i] = Color::BLACK;
                 }
               }
-              index = (index + 1);
+            }
+            index = (index + 1);
 
   # User facing LED ring. Remapping of the internal LEDs.
   # Exposed to be used by the user.
@@ -1285,7 +1286,7 @@ script:
   - id: control_volume
     mode: restart
     parameters:
-      increase_volume: bool  # True: Increase volume / False: Decrease volume.
+      increase_volume: bool # True: Increase volume / False: Decrease volume.
     then:
       - delay: 16ms
       - if:
@@ -1309,7 +1310,7 @@ script:
   - id: control_group_volume
     mode: restart
     parameters:
-      increase_volume: bool  # True: Increase volume / False: Decrease volume.
+      increase_volume: bool # True: Increase volume / False: Decrease volume.
     then:
       - delay: 16ms
       - if:
@@ -1336,7 +1337,7 @@ script:
   - id: control_hue
     mode: restart
     parameters:
-      increase_hue: bool  # True: Increase hue / False: Decrease hue.
+      increase_hue: bool # True: Increase hue / False: Decrease hue.
     then:
       - delay: 16ms
       - if:
@@ -1603,6 +1604,8 @@ audio_file:
     file: ${easter_egg_tada_sound_file}
   - id: error_cloud_expired
     file: ${error_cloud_expired_sound_file}
+  - id: thinking_sound
+    file: ${thinking_sound_file}
 
 media_source:
   - platform: audio_file
@@ -1615,7 +1618,7 @@ media_source:
     buffer_size: 500000
   - platform: sendspin
     id: sendspin_media_source
-    fixed_delay: 480 microseconds  # The AIC3204 DAC used, as configured, on the VPE delays audio by 480 microseconds
+    fixed_delay: 480 microseconds # The AIC3204 DAC used, as configured, on the VPE delays audio by 480 microseconds
 
 media_player:
   - platform: sendspin
@@ -1624,15 +1627,15 @@ media_player:
     id: external_media_player
     name: Media Player
     announcement_pipeline:
-      format: FLAC     # FLAC is the least processor intensive codec
-      num_channels: 1  # Stereo audio is unnecessary for announcements
+      format: FLAC # FLAC is the least processor intensive codec
+      num_channels: 1 # Stereo audio is unnecessary for announcements
       sample_rate: 48000
       speaker: announcement_resampling_speaker
       sources:
         - audio_file_announcement_source
         - http_announcement_source
     media_pipeline:
-      format: FLAC     # FLAC is the least processor intensive codec
+      format: FLAC # FLAC is the least processor intensive codec
       num_channels: 2
       sample_rate: 48000
       speaker: media_resampling_speaker
@@ -1832,8 +1835,8 @@ voice_assistant:
   on_start:
     - mixer_speaker.apply_ducking:
         id: media_mixing_input
-        decibel_reduction: 20  # Number of dB quieter; higher implies more quiet, 0 implies full volume
-        duration: 0.0s         # The duration of the transition (default is no transition)
+        decibel_reduction: 20 # Number of dB quieter; higher implies more quiet, 0 implies full volume
+        duration: 0.0s # The duration of the transition (default is no transition)
   on_listening:
     - lambda: id(voice_assistant_phase) = ${voice_assist_waiting_for_command_phase_id};
     - script.execute: control_leds
@@ -1843,11 +1846,15 @@ voice_assistant:
   on_stt_vad_end:
     - lambda: id(voice_assistant_phase) = ${voice_assist_thinking_phase_id};
     - script.execute: control_leds
+    - script.execute:
+        id: play_sound
+        priority: false
+        sound_file: "thinking_sound"
   on_intent_progress:
     - if:
         condition:
           # A nonempty x variable means a streaming TTS url was sent to the media player
-          lambda: 'return !x.empty();'
+          lambda: "return !x.empty();"
         then:
           - lambda: id(voice_assistant_phase) = ${voice_assist_replying_phase_id};
           - script.execute: control_leds
@@ -1857,7 +1864,7 @@ voice_assistant:
     - if:
         condition:
           # The intent_progress trigger didn't start the TTS Reponse
-          lambda: 'return id(voice_assistant_phase) != ${voice_assist_replying_phase_id};'
+          lambda: "return id(voice_assistant_phase) != ${voice_assist_replying_phase_id};"
         then:
           - lambda: id(voice_assistant_phase) = ${voice_assist_replying_phase_id};
           - script.execute: control_leds
